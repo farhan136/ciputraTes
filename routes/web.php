@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('pages.filter');
-});
+Route::get('/', 'App\Http\Controllers\CustomerController@index');
+
+Route::resource('customer', 'App\Http\Controllers\CustomerController');
+
+Route::resource('transaction', 'App\Http\Controllers\TransactionController');
